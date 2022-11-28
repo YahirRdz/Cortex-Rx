@@ -1,16 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import Product from './pages/product'
-import './App.css'
+import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import { Product, Story, Pricing } from "./pages";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App"> 
-      <Product />
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<Product />} />
+        <Route path="/story" element={<Story />} />
+        <Route path="/pricing" element={<Pricing />} />
+      </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
